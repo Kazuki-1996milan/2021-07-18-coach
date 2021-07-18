@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SampleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,4 @@ Route::get('/building', function () {
     return "建物です";
 });
 
-Route::get('/building/{room}', function ($room) {
-    return "部屋番号は" . $room . "です";
-});
+Route::get('/building/{room?}', [SampleController::class, 'index']);
